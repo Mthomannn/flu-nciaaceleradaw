@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Teste de Conexão Inicial (Skill Firebase)
+    match /test/connection {
+      allow read: if true;
+    }
+
+    // Perfil e Configuração do Aluno
+    match /users/{userId} {
+      allow read, write: if true;
+      
+      // Histórico de Evolução e Diagnósticos do Aluno
+      match /evolution/{evolutionId} {
+        allow read, write: if true;
+      }
+    }
+
+    // Contas de Aluno (Autenticação Híbrida / Sincronização na Nuvem)
+    match /accounts/{accountId} {
+      allow read, write: if true;
+    }
+  }
+}

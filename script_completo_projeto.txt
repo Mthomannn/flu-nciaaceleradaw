@@ -1,0 +1,343 @@
+================================================================================
+          SISTEMA FLUÊNCIA ACELERADA - SCRIPT E ARQUITETURA COMPLETA
+             DESDE O INÍCIO DO PROJETO ATÉ O ESTÁGIO ATUAL
+================================================================================
+
+Data de Consolidação: 2026-11-11
+Versão da Plataforma: 2.5.0 (Produção / Resiliente)
+Idioma Oficial da Plataforma: INGLÊS EXCLUSIVO (Foco em falantes nativos de Português)
+Arquitetura: Full-Stack React 19 + TypeScript + Node.js Express + Google GenAI SDK (@google/genai)
+Design System: Tailwind CSS v4, Layout Fluido e Responsivo (Mobile, Tablet, Desktop)
+Persistência de Dados: LocalStorage com isolamento por usuário e nível + Firebase Firestore Sync
+
+--------------------------------------------------------------------------------
+SUMÁRIO GERAL DO DOCUMENTO:
+--------------------------------------------------------------------------------
+1. VISÃO GERAL E FILOSOFIA DE APRENDIZAGEM
+2. CURRÍCULO DE 100 HORAS (DO NÍVEL 0 AO NÍVEL A1 - BASE EXTREMAMENTE SÓLIDA)
+3. OS 8 PILARES DA METODOLOGIA CIENTÍFICA
+4. SCRIPTS DE CONFIGURAÇÃO E AMBIENTE (package.json, vite.config.ts, tsconfig.json)
+5. SCRIPT DO BACKEND SERVER-SIDE RESILIENTE (server.ts) E SUAS ROTAS API
+6. SCRIPT DOS SERVIÇOS DE ÁUDIO E VOZ (src/services/audio.ts)
+7. SCRIPT DO ALGORITMO SRS ANKIDROID (src/services/srs.ts)
+8. SCRIPT DE PERSISTÊNCIA DE HISTÓRICO E ESTADO (COMO NUNCA MAIS PERDER O PROGRESSO)
+9. ESTRUTURA DOS MÓDULOS DE PRÁTICA INTERATIVA
+10. GUIA DE EXECUÇÃO, TESTES E DEPLOY
+
+================================================================================
+1. VISÃO GERAL E FILOSOFIA DE APRENDIZAGEM
+================================================================================
+O projeto Fluência Acelerada foi concebido para erradicar a ineficiência dos métodos
+tradicionais de ensino de idiomas que aprisionam o estudante em regras gramaticais
+pedantes e traduções literais robóticas.
+
+Princípios Chave:
+- Foco Exclusivo em Inglês: remoção de quaisquer idiomas secundários para imersão total.
+- Princípio 80/20 (Pareto): 500 palavras e 50 estruturas nativas cobrem 75% da fala real.
+- Fonética Preventiva: eliminação sistemática dos 10 vícios fonéticos típicos de brasileiros
+  (epêntese do som 'i' em consoantes mudas, confusão de vogais tensas/frouxas, dark L, som do TH).
+- Agilidade Mental (Regra dos 5 Segundos): exercícios cronometrados que impedem a tradução
+  mental prévia, forçando o cérebro a pensar diretamente em inglês.
+- Repetição Espaçada Inteligente (SRS): retenção permanente na memória de longo prazo
+  baseada no algoritmo SM-2 do Anki.
+- Continuidade de Sessão Permanente: nenhum exercício, diálogo ou auditoria de pronúncia é
+  perdido ao navegar entre telas ou fechar o app.
+
+================================================================================
+2. CURRÍCULO DE 100 HORAS (NÍVEL 0 AO A1 - BASE EXTREMAMENTE SÓLIDA)
+================================================================================
+O currículo do Nível 0 ao Nível A1 totaliza exatamente 100 horas cronometradas,
+estruturadas em 4 Fases Progressivas e 12 Módulos Práticos:
+
+FASE 1: DESBLOQUEIO FONÉTICO E PRÉ-A1 (Horas 0 a 25)
+- Módulo 1 (Horas 1 a 8): Alfabeto Fonético, Consoantes Mudas e Fim da Epêntese ('i' final).
+  * Foco: like, make, good, need, stop sem som de "i" no final.
+- Módulo 2 (Horas 9 a 16): As 100 Palavras Vitais & Pronomes em Fluxo Oral.
+  * Foco: I want, I need, Where is, How much, I have.
+- Módulo 3 (Horas 17 a 25): Ritmo Acentual (Stress-Timed Rhythm) e o Som Schwa (/ə/).
+  * Foco: Palavras de conteúdo enfatizadas, palavras gramaticais reduzidas.
+
+FASE 2: PILARES ESTRUTURAIS & DRIVER DE CONECTORES (Horas 26 a 50)
+- Módulo 4 (Horas 26 a 33): Os 20 Verbos Fundamentais em Frases de Ação Real.
+  * Foco: do, make, take, get, go, come, see, hear, say, tell.
+- Módulo 5 (Horas 34 a 41): Perguntas Automáticas de Sobrevivência (Who, What, Where, When, Why, How).
+  * Foco: formulação imediata em menos de 5 segundos.
+- Módulo 6 (Horas 42 a 50): Conectivos de Conversação e Cola Mental (Because, So, But, Actually).
+  * Foco: conectar duas frases simples em uma fala fluida.
+
+FASE 3: CONTRAÇÕES & CONNECTED SPEECH DO COTIDIANO (Horas 51 a 75)
+- Módulo 7 (Horas 51 a 58): As 15 Grandes Contrações Orais (Gonna, Wanna, Gotta, Lemme, Kinda).
+  * Foco: reconhecimento imediato de áudio rápido e reprodução vocal.
+- Módulo 8 (Horas 59 a 66): O Segredo das Linking Words (Consoante + Vogal, Flap T).
+  * Foco: "pick it up", "water", "a lot of", som contínuo sem travamentos.
+- Módulo 9 (Horas 67 a 75): Sobrevivência em Situações Reais (Café, Hotel, Aeroporto, Táxi, Médico).
+  * Foco: roleplays realistas com a IA e pedidos funcionais.
+
+FASE 4: AUTONOMIA BÁSICA & DRILLS DE 5 SEGUNDOS (Horas 76 a 100)
+- Módulo 10 (Horas 76 a 83): Narrativa Pessoal Básica no Passado e Futuro com 'Going to'.
+  * Foco: contar o que fez ontem e o que fará amanhã sem hesitar.
+- Módulo 11 (Horas 84 a 92): Treino Intensivo de Reflexo Rápido (Drills de 5s sem tradução mental).
+  * Foco: 40 rodadas consecutivas de perguntas inesperadas.
+- Módulo 12 (Horas 93 a 100): Consolidação A1 e Teste de Conversação Contínua de 15 Minutos.
+  * Foco: atingimento do selo A1 com segurança fonética e autonomia comunicativa.
+
+================================================================================
+3. OS 8 PILARES DA METODOLOGIA CIENTÍFICA
+================================================================================
+1. Arquitetura 80/20: Plano personalizado de 90 dias com cronograma diário funcional.
+2. Vocabulário Ativo & SRS Anki: Repetição espaçada com intervalos de 1d, 3d, 7d, 14d, 30d.
+3. Desconstrução Fonética Forense: O Treinador de Voz Português -> Inglês analisa cada palavra
+   com IPA, dicas anatômicas de posicionamento de língua e dentes e veredito forense.
+4. Fala Conectada & Shadowing: Escuta ativa com revelação de transcrição e repetição espelhada.
+5. Drills de 5 Segundos (Reflexo): Cronômetro regressivo que corta o hábito da tradução interna.
+6. Conversação Guiada: Parceiro IA adaptativo com correções pontuais a cada 3 turnos.
+7. Pensamento Direto: Eliminação dos intermediários linguísticos através de 4 fases mentais.
+8. Imersão Diária: Rotina auditiva de 15 minutos em ambientes cotidianos.
+
+================================================================================
+4. SCRIPTS DE CONFIGURAÇÃO E AMBIENTE
+================================================================================
+
+### 4.1. package.json
+```json
+{
+  "name": "react-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "start": "node server.ts",
+    "preview": "vite preview",
+    "clean": "rm -rf dist server.js",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/qrcode": "^1.5.6",
+    "@vitejs/plugin-react": "^5.0.4",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "firebase": "^12.19.0",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "qrcode": "^1.5.4",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^6.2.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3",
+    "vite-plugin-pwa": "^1.3.0"
+  }
+}
+```
+
+### 4.2. vite.config.ts
+```ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import { VitePWA } from 'vite-plugin-pwa';
+
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icons/*.png'],
+      manifest: {
+        name: 'Fluência Acelerada',
+        short_name: 'Fluência',
+        description: 'Sistema de aprendizagem acelerada e domínio prático de inglês',
+        theme_color: '#0f172a',
+        background_color: '#ffffff',
+        display: 'standalone',
+        orientation: 'portrait',
+        icons: [
+          {
+            src: '/icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    }),
+  ],
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+    hmr: false,
+  },
+});
+```
+
+================================================================================
+5. SCRIPT DO BACKEND SERVER-SIDE RESILIENTE (server.ts)
+================================================================================
+O backend Express provê uma camada de proxy resiliente para o Gemini e controle de áudio:
+- Rota POST /api/chat: Conversação fluente com papéis (Amigo, Atendente, Colega), análise
+  de 80% de compreensão, correções pontuais a cada 3 turnos e fallback pedagógico offline.
+- Rota POST /api/evaluate-speech: Auditoria de fala comparando frase alvo e transcrição/áudio.
+- Rota POST /api/transcribe-audio: Transcrição fonética de áudio WebM base64 de alta precisão.
+- Rota POST /api/translate-and-phonetics: Tradução de Português para Inglês natural coloquial
+  com decomposição silábica, IPA, armadilhas fonéticas e guia anatômico da boca.
+- Rota POST /api/critical-pronunciation-audit: O Juiz Forense de Pronúncia. Detecta paragoge
+  do 'i', troca de vogais tensas/frouxas, som do TH, dark L e R retroflexo americano.
+- Rota POST /api/generate-vocab-batch: Geração controlada de 15 expressões nativas para Anki.
+- Rota POST /api/generate-plan: Arquiteto de 90 dias com cronograma de 3 blocos diários.
+
+Modelos Utilizados com Failover Automático:
+1. gemini-3.8-flash (principal de alta velocidade e precisão)
+2. gemini-flash-latest (backup imediato)
+3. gemini-3.1-flash-lite (resiliência contra 503 e rate limits)
+
+================================================================================
+6. SCRIPT DOS SERVIÇOS DE ÁUDIO E VOZ (src/services/audio.ts)
+================================================================================
+O serviço de áudio reúne três classes fundamentais:
+1. AudioSynthesizer: Síntese de voz com Web Speech API, controle de velocidade (0.75x a 1.25x),
+   fallback para vozes nativas de alta qualidade (en-US, en-GB).
+2. VoiceRecorder: Gravação de áudio do microfone via MediaRecorder com visualizador de onda em
+   tempo real (volume de áudio) e exportação em Blob/Base64 para auditoria no servidor.
+3. SpeechTranscriber: Reconhecimento contínuo de fala (SpeechRecognition) com suporte a pt-BR
+   e en-US, com failover para o endpoint server-side `/api/transcribe-audio`.
+
+================================================================================
+7. SCRIPT DO ALGORITMO SRS ANKIDROID (src/services/srs.ts)
+================================================================================
+Implementação fiel do algoritmo de Repetição Espaçada SuperMemo SM-2:
+- 4 Botões de Avaliação:
+  1. De Novo (Again): Reseta intervalo para 1 dia, penaliza Ease Factor.
+  2. Difícil (Hard): Multiplica intervalo por 1.2x.
+  3. Bom (Good): Aplica fórmula completa (Intervalo anterior * Ease Factor).
+  4. Fácil (Easy): Aumenta Ease Factor e avança o intervalo de forma acelerada.
+- Sincronização em tempo real com LocalStorage sob a chave `fluency_anki_deck_Inglês`.
+
+================================================================================
+8. SCRIPT DE PERSISTÊNCIA DE HISTÓRICO E ESTADO
+================================================================================
+Para atender à regra fundamental: "Toda vez que eu preciso continuar, ele tem que ficar
+com o histórico parado. Quando eu acesso novamente, continua de onde parei."
+
+O sistema utiliza chaves de armazenamento local isoladas e reativas:
+
+1. Voice Coach Português -> Inglês (`PtToEnVoiceCoachModal.tsx`):
+   - Chave: `fluency_voice_coach_state`
+   - Salva: frase em português, tradução gerada, IPA, áudio gravado, avaliação forense
+     e contagem de tentativas.
+   - Botão "Limpar / Nova Frase" remove a chave explicitamente quando o usuário deseja
+     iniciar um novo ciclo.
+
+2. Módulo de Conversação (`ConversationModule.tsx`):
+   - Chave: `fluency_conversation_state_${level}`
+   - Salva: lista de mensagens completa (chat history), texto rascunhado, contagem de turnos,
+     persona ativa ('amigo', 'atendente', 'colega') e tópico.
+   - Não reinicia automaticamente ao navegar entre módulos.
+   - Botão "Reiniciar Diálogo" limpa o histórico quando solicitado pelo usuário.
+
+3. Módulo de Speech Drills (`SpeechDrillsModule.tsx`):
+   - Chave: `fluency_speech_drills_${level}`
+   - Salva: aba ativa ('levelDrills', 'rapid40', 'substitution15', 'unexpectedTest'),
+     `levelDrillIndex`, `drillIndex`, `selectedStructureIndex`, `testQuestionIndex`.
+   - O estudante sempre retoma na pergunta exata onde havia parado.
+
+4. Módulo de Escuta & Shadowing (`ListeningModule.tsx`):
+   - Chave: `fluency_listening_${level}`
+   - Salva: `currentIndex` do áudio e aba de escuta ativa.
+
+5. Módulo de Pronúncia (`PronunciationModule.tsx`):
+   - Chave: `fluency_pronunciation_${level}`
+   - Salva: vício fonético selecionado (`selectedErrorIndex`) e frase de treino semanal.
+
+6. Módulo de Pensamento Direto (`ThinkingDirectModule.tsx`):
+   - Chave: `fluency_thinking_direct_${level}`
+   - Salva: estágio de pensamento mental e índice da pergunta rápida.
+
+7. Módulo de Vocabulário & Baralho (`VocabularyModule.tsx`):
+   - Chave: `fluency_vocab_tab_state`
+   - Salva: aba ativa, índice do desafio de contrações e índice do ditado auditivo.
+
+8. Navegação Global (`App.tsx`):
+   - Chave: `fluency_active_module`
+   - Lembra exatamente o módulo em que o aluno estava ao recarregar a página.
+
+================================================================================
+9. ESTRUTURA DOS MÓDULOS DE PRÁTICA INTERATIVA
+================================================================================
+- OverviewDashboard: Visão panorâmica dos 8 pilares, métricas de retenção e Roadmap 100h.
+- FoundationRoadmapCard: Trilha interativa de 100 horas com 12 módulos e progresso salvo.
+- ArchitectModule: Geração do plano de 90 dias com cronograma de 3 turnos.
+- VocabularyModule: Sistema AnkiDroid com 4 opções de resposta, criação manual e por IA.
+- SpeechDrillsModule: Treinamento de reflexo com cronômetro de 5 segundos.
+- ListeningModule: Áudios cronometrados com velocidade ajustável e gravação espelho.
+- PronunciationModule: 10 armadilhas fonéticas com instruções anatômicas detalhadas.
+- ThinkingDirectModule: As 4 fases para parar de traduzir em português mentalmente.
+- ImmersionModule: Podcasts e áudios de imersão contextualizada para o cotidiano.
+- PtToEnVoiceCoachModal: Ferramenta central de tradução e auditoria forense de fala.
+
+================================================================================
+10. GUIA DE EXECUÇÃO, TESTES E DEPLOY
+================================================================================
+- Instalação das dependências:
+  $ npm install
+
+- Execução em ambiente de desenvolvimento (porta 3000):
+  $ npm run dev
+
+- Validação de tipos TypeScript:
+  $ npm run lint   (executa tsc --noEmit)
+
+- Compilação de Produção:
+  $ npm run build
+
+- Inicialização do Servidor em Produção:
+  $ npm start
+
+================================================================================
+11. SISTEMA DIRECIONADO DE SEQUÊNCIA EVOLUTIVA (TRILHA DOS 12 PASSOS GUIADOS)
+================================================================================
+Para impedir que o aluno fique solto ou confuso sem saber onde começar ou o que fazer a seguir,
+o sistema implementa a Trilha Evolutiva Direcionada (Guided Learning Sequence):
+
+- 12 Passos Cronometrados do Nível 0 ao A1 Sólido:
+  1. Passo 1 (01-08h): Desbloqueio Fonético & Fim do "i" parasita (Pronúncia Forense)
+  2. Passo 2 (09-16h): As 100 Palavras Vitais & Pronomes em Fluxo Oral (Anki SRS)
+  3. Passo 3 (17-25h): Ritmo Acentual & O Som Schwa /ə/ (Treino de Ouvido)
+  4. Passo 4 (26-33h): Os 20 Verbos Fundamentais em Ação Real (Vocabulário em Chunks)
+  5. Passo 5 (34-41h): Perguntas de Sobrevivência contra o Relógio (Drills de 5s)
+  6. Passo 6 (42-50h): Conectivos de Conversação & Primeiro Diálogo IA (Roleplay Amigo)
+  7. Passo 7 (51-58h): As 15 Grandes Contrações Orais (Gonna, Wanna, Gotta, Lemme)
+  8. Passo 8 (59-66h): Linking Words & Shadowing de Escuta Ativa (Fala Conectada)
+  9. Passo 9 (67-75h): Simulação de Situações Reais (Café, Hotel, Aeroporto, Viagem)
+  10. Passo 10 (76-83h): Pensamento Direto & Parar de Traduzir Mentalmente (Narração Mental)
+  11. Passo 11 (84-92h): Bateria de 40 Rodadas de Reflexo Rápido (Perguntas Inesperadas)
+  12. Passo 12 (93-100h): Consolidação Plena A1 & Prova de Conversação Contínua (Certificação)
+
+- Direcionamento Unificado:
+  * Painel Superior no Dashboard (`GuidedLearningPathCard`): exibe o passo atual, objetivo concreto e botão de 1 clique para ir à lição.
+  * Botão de Trilha no TopNavigation: permite retomar a lição atual de qualquer tela.
+  * Banner Superior em Todos os Módulos (`GuidedStepBanner`): acompanha o aluno durante os exercícios com botão "Concluir & Próximo ➔".
+
+- Paridade Estrita de Áudio Normal vs Pausado:
+  * Em todos os exercícios (especialmente Ditado Auditivo e Treino de Ouvido), o botão "Ouvir Pausado (0.75x)" reproduz rigorosamente a MESMA FRASE do botão "Ouvir Velocidade Real (1.0x)", sem alterar, cortar ou substituir contrações nativas.
+
+================================================================================
+FIM DO SCRIPT CONSOLIDADO - SISTEMA DE FLUÊNCIA ACELERADA
+================================================================================

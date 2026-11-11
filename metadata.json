@@ -1,0 +1,10 @@
+{
+  "name": "Fluência Acelerada",
+  "description": "Sistema de aprendizagem acelerada e domínio prático de idiomas baseado nos 8 pilares da fluência, com feedback fonético, conversação interativa e resiliência a falhas.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

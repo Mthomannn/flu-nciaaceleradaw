@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Perfil e dados de configuração e progresso do aluno",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "targetLanguage": { "type": "string" },
+        "level": { "type": "string" },
+        "objective": { "type": "string" },
+        "minutesPerDay": { "type": "number" },
+        "streakDays": { "type": "number" },
+        "totalXp": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "lastActiveAt": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "targetLanguage", "level", "streakDays", "totalXp", "createdAt"]
+    },
+    "StudentEvolution": {
+      "title": "StudentEvolution",
+      "description": "Histórico de evolução, diagnóstico linguístico e progresso diário do aluno",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "date": { "type": "string" },
+        "overallScore": { "type": "number" },
+        "level": { "type": "string" },
+        "phoneticsScore": { "type": "number" },
+        "oralReflexScore": { "type": "number" },
+        "vocabScore": { "type": "number" },
+        "listeningScore": { "type": "number" },
+        "stagnationRisk": { "type": "string" },
+        "prescribedAction": { "type": "string" },
+        "completedMinutes": { "type": "number" },
+        "xpEarned": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "date", "overallScore", "level", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Armazena o perfil e progresso de cada aluno autenticado"
+    },
+    "/users/{userId}/evolution/{evolutionId}": {
+      "schema": { "$ref": "#/entities/StudentEvolution" },
+      "description": "Registros de diagnóstico, evolução e métricas diárias do aluno"
+    }
+  }
+}
